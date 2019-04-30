@@ -1,6 +1,7 @@
 # Info
-A tutorial on Markdown and Git
-Author: Zhengyi Peng <zhengyi_peng@brown.edu>
+A tutorial on Markdown and Git  
+Author: Zhengyi Peng <zhengyi_peng@brown.edu>  
+[Source In Markdown](./markdown-git.md)
 
 ## Table of Contents
 + [Markdown: Syntax and Tools](#markdown)
