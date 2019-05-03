@@ -173,123 +173,107 @@ Its goals include speed, data integrity, and support for distributed, non-linear
 <h3>
 <a id="user-content-initializing-a-repository-in-an-existing-directory" class="anchor" href="#initializing-a-repository-in-an-existing-directory" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository" rel="nofollow">Initializing a Repository in an Existing Directory</a>
 </h3>
-<pre><code>+ cd into the project folder
-    ```sh
-    $ mkdir d3-demo
-    $ cd d3-demo
-    ```
-+ transforms a normal directory into a git directory
-    `git init`
+<ul>
+<li>
+<p>cd into the project folder</p>
+<pre><code>$ mkdir d3-demo
+$ cd d3-demo
 </code></pre>
+</li>
+<li>
+<p>transforms a normal directory into a git directory<br>
+<code>git init</code></p>
+</li>
+</ul>
 <h3>
 <a id="user-content-first-commit" class="anchor" href="#first-commit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>First Commit</h3>
-<pre><code>```sh
-$ touch d3-demo.html
+<pre><code>$ touch d3-demo.html
 $ git add d3-demo.html
 $ git commit -m "create target file"
-```
-
-`git add &lt;file&gt;` add changes in files to the next commit
-
-the string afters `-m` is the commit message, it's always a good
-idea to remind yourself why this commit is necessary and what's
-changed
 </code></pre>
+<p><code>git add &lt;file&gt;</code> add changes in files to the next commit</p>
+<p>The string afters <code>-m</code> is the commit message, it's always a good
+idea to remind yourself why this commit is necessary and what's
+changed</p>
 <h3>
 <a id="user-content-check-the-current-status-of-the-directory" class="anchor" href="#check-the-current-status-of-the-directory" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Check The Current Status Of The Directory</h3>
-<pre><code>```sh
-$ git status
+<div class="highlight highlight-source-shell"><pre>$ git status
 On branch master
-nothing to commit, working tree clean
-```
-here it says there isn't any untracked change from last commit
-</code></pre>
+nothing to commit, working tree clean</pre></div>
+<p>The output says there isn't any untracked change from last commit</p>
 <h3>
 <a id="user-content-modify-and-commit-new-changes" class="anchor" href="#modify-and-commit-new-changes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modify and Commit New Changes</h3>
 <h5>
 <a id="user-content-write-a-skeleton-html-page" class="anchor" href="#write-a-skeleton-html-page" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>write a skeleton HTML page</h5>
-<pre><code>    ```html
-    &lt;!doctype html&gt;
-    &lt;html lang="en"&gt;
-        &lt;head&gt;
-          &lt;meta charset="utf-8"&gt;
-          &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
-          &lt;title&gt;CSCI1320: D3 Lecture Demo&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-          &lt;script&gt;
-          &lt;/script&gt;
-        &lt;/body&gt;
-    &lt;/html&gt;
-    ```
-</code></pre>
+<div class="highlight highlight-text-html-basic"><pre>&lt;!doctype html&gt;
+&lt;<span class="pl-ent">html</span> <span class="pl-e">lang</span>=<span class="pl-s"><span class="pl-pds">"</span>en<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">head</span>&gt;
+      &lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">meta</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>viewport<span class="pl-pds">"</span></span> <span class="pl-e">content</span>=<span class="pl-s"><span class="pl-pds">"</span>width=device-width, initial-scale=1, shrink-to-fit=no<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">title</span>&gt;CSCI1320: D3 Lecture Demo&lt;/<span class="pl-ent">title</span>&gt;
+    &lt;/<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">body</span>&gt;
+      &lt;<span class="pl-ent">script</span>&gt;<span class="pl-s1"></span>
+<span class="pl-s1">      </span>&lt;/<span class="pl-ent">script</span>&gt;
+    &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
 <h5>
 <a id="user-content-git-automatically-finds-out-the-changes-in-working-directory" class="anchor" href="#git-automatically-finds-out-the-changes-in-working-directory" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>git automatically finds out the changes in working directory</h5>
-<pre><code>    ```
-    $ git status
-    On branch master
-    Changes not staged for commit:
-      (use "git add &lt;file&gt;..." to update what will be committed)
-      (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+<pre><code>$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-      modified:   d3-demo.html
+  modified:   d3-demo.html
 
-    no changes added to commit (use "git add" and/or "git commit -a")
-    ```
+no changes added to commit (use "git add" and/or "git commit -a")
 </code></pre>
 <h5>
 <a id="user-content-stage-the-changes" class="anchor" href="#stage-the-changes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>stage the changes</h5>
-<pre><code>    ```
-    $ git add d3-demo.html
-    $ git status
-    On branch master
-    Changes to be committed:
-      (use "git reset HEAD &lt;file&gt;..." to unstage)
+<pre><code>$ git add d3-demo.html
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
 
-      modified:   d3-demo.html
-    ```
-
-    When using `git add`, changes are tracked in the staging area.
-    Think staging area as accepted changes. Next `git commit` will record all changes in staging area.
+  modified:   d3-demo.html
 </code></pre>
+<p>When using <code>git add</code>, changes are tracked in the staging area.
+Think staging area as accepted changes. Next <code>git commit</code> will record all changes in staging area.</p>
 <h5>
 <a id="user-content-commit-the-staged-changes" class="anchor" href="#commit-the-staged-changes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>commit the staged changes</h5>
-<pre><code>    If omitting the `-m` flag, you will need to write the commit message in an editor.
+<p>If omitting the <code>-m</code> flag, you will need to write the commit message in an editor.</p>
+<p>You can <a href="https://git-scm.com/book/eo/v1/Ekkomenci-First-Time-Git-Setup#Your-Editor" rel="nofollow">Change Editor</a>.</p>
+<blockquote>
+<p>By default, Git uses your system’s default editor, which is generally Vi or Vim.
+If you want to use a different text editor, such as Emacs, you can do the following:</p>
+<p><code>$ git config --global core.editor emacs</code></p>
+</blockquote>
+<pre><code>$ git commit
 
-    You can [Change Editor](https://git-scm.com/book/eo/v1/Ekkomenci-First-Time-Git-Setup#Your-Editor).
+(inside default editor)
 
-    &gt; By default, Git uses your system’s default editor, which is generally Vi or Vim.
-    &gt; If you want to use a different text editor, such as Emacs, you can do the following:
-    &gt;
-    &gt; `$ git config --global core.editor emacs`
-
-    ```
-    $ git commit
-
-    (inside default editor)
-
-    # Please enter the commit message for your changes. Lines starting
-    # with '#' will be ignored, and an empty message aborts the commit.
-    #
-    # On branch master
-    # Changes to be committed:
-    # modified:   d3-demo.html
-    #
-    ```
-
-    Puts commit message `created HTML template` in first line and save and exit.
-    For example, typing `:x` in normal mode in vim
-    
-    &gt; git works with changes, not files
-    &gt; Git focuses on the changes to a file rather than the file itself.
-    &gt; When you say git add file, you are not telling git to add the file to the repository. 
-    &gt; Rather you are saying that git should make note of the current state of that file to be committed later.
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+# modified:   d3-demo.html
+#
 </code></pre>
+<p>Puts commit message <code>created HTML template</code> in first line and save and exit.
+For example, typing <code>:x</code> in normal mode in vim</p>
+<blockquote>
+<p>git works with changes, not files
+Git focuses on the changes to a file rather than the file itself.
+When you say git add file, you are not telling git to add the file to the repository.
+Rather you are saying that git should make note of the current state of that file to be committed later.</p>
+</blockquote>
 <h3>
 <a id="user-content-view-commit-history" class="anchor" href="#view-commit-history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History" rel="nofollow">View Commit History</a>
 </h3>
-<pre><code>```
-$ git log
+<pre><code>$ git log
 commit 3958d73a146bce0af25fcec3781c724530875887 (HEAD -&gt; master)
 Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
 Date:   Mon Apr 29 16:56:10 2019 -0400
@@ -301,19 +285,15 @@ Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
 Date:   Mon Apr 29 16:22:58 2019 -0400
 
     create target file
-```
-
-We can see the two commits made to this repository.
 </code></pre>
+<p>We can see the two commits made to this repository.</p>
 <h3>
 <a id="user-content-create-alias-shorthand-abbreviations-for-git-commands" class="anchor" href="#create-alias-shorthand-abbreviations-for-git-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>create <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases" rel="nofollow">alias</a> (shorthand, abbreviations) for git commands</h3>
-<pre><code>You can sepcify alias for git commands in `.gitconfig` file.  
-Create a `.gitconfig` file in your $HOME directory to mak configuration global  
-Alternatively, create a `.gitconfig` file in your current directory to make configuration local
-
-Here is my `.gitconfig` file:
-```txt
-[color]
+<p>You can sepcify alias for git commands in <code>.gitconfig</code> file.<br>
+Create a <code>.gitconfig</code> file in your $HOME directory to mak configuration global<br>
+Alternatively, create a <code>.gitconfig</code> file in your current directory to make configuration local</p>
+<p>Here is my <code>.gitconfig</code> file:</p>
+<pre lang="txt"><code>[color]
   branch = auto
   diff = auto
   status = auto
@@ -355,27 +335,20 @@ Here is my `.gitconfig` file:
 [core]
   autocrlf = false 
   safecrlf = false 
-```
-
-You can try `git lv` if you used the above configurations.
 </code></pre>
+<p>You can try <code>git lv</code> if you used the above configurations.</p>
 <h3>
 <a id="user-content-get-history-versions" class="anchor" href="#get-history-versions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get history versions</h3>
-<pre><code>What's a version control system good for if we cannot revert back to old versions?  
+<p>What's a version control system good for if we cannot revert back to old versions?<br>
 Luckily, git allows us to easily travel back and force in commit.
-Think your commits as snapshots of the repository.
-
-Using the `git log` command, you can find the hash for every commits. 
-Think hash as identifier for each commit.  
-
-Your hash might be different from what I have:
-```
-* 3958d73a146bce0af25fcec3781c724530875887 (HEAD -&gt; master) HTML template
+Think your commits as snapshots of the repository.</p>
+<p>Using the <code>git log</code> command, you can find the hash for every commits.
+Think hash as identifier for each commit.</p>
+<p>Your hash might be different from what I have:</p>
+<pre><code>* 3958d73a146bce0af25fcec3781c724530875887 (HEAD -&gt; master) HTML template
 * b9b38b335a62cb70bd3681da7b536d66b39e9f7c create target file
-```
-
-```
-$ git checkout b9b38b335a62cb70bd3681da7b536d66b39e9f7c
+</code></pre>
+<pre><code>$ git checkout b9b38b335a62cb70bd3681da7b536d66b39e9f7c
 Note: checking out 'b9b38b335a62cb70bd3681da7b536d66b39e9f7c'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
@@ -388,16 +361,11 @@ do so (now or later) by using -b with the checkout command again. Example:
   git checkout -b &lt;new-branch-name&gt;
 
 HEAD is now at b9b38b3 create target file
-``` 
-
-`git checkout &lt;hash&gt;`takes us back to the commit specified by the hash.
-
-If you use `cat d3-demo.html`, you will find its an empty file as our first commit just creates this file.
-
-If you have set the configuration, you can run `git lv`, otherwise run `git log --all --graph`
-
-```txt
-$ git lv
+</code></pre>
+<p><code>git checkout &lt;hash&gt;</code>takes us back to the commit specified by the hash.</p>
+<p>If you use <code>cat d3-demo.html</code>, you will find its an empty file as our first commit just creates this file.</p>
+<p>If you have set the configuration, you can run <code>git lv</code>, otherwise run <code>git log --all --graph</code></p>
+<pre lang="txt"><code>$ git lv
 * commit: 3958d73 &lt;3958d73a146bce0af25fcec3781c724530875887&gt;  (master)
 | date: Mon Apr 29 16:56:10 2019 -0400 44 minutes ago
 | author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
@@ -407,103 +375,273 @@ $ git lv
   date: Mon Apr 29 16:22:58 2019 -0400 77 minutes ago
   author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
   create target file
-```
-
-**HEAD** is where we are currently at, 
-&gt; master’ is the name of the default branch.
-&gt; By checking out a branch by name, you go to the latest version of that branch.
-
-Use `git checkout master` to go back to latest commit.
 </code></pre>
+<p><strong>HEAD</strong> is where we are currently at,</p>
+<blockquote>
+<p>master’ is the name of the default branch.
+By checking out a branch by name, you go to the latest version of that branch.</p>
+</blockquote>
+<p>Use <code>git checkout master</code> to go back to latest commit.</p>
 <h3>
 <a id="user-content-tagging-a-commit" class="anchor" href="#tagging-a-commit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging" rel="nofollow">Tagging</a> a commit</h3>
-<pre><code>If you do not reference a commit by hash every time, you can tag it by a custom name.
-
-Checkout the first commit and use `git tag initial` to tag the first commit as initial.
-
-Now you can travel back and forth using `git checkout master` and `git checkout initial`  
-
-Additionally, you can use `git tag` to view all defined tags.
-</code></pre>
+<p>If you do not reference a commit by hash every time, you can tag it by a custom name.</p>
+<p>Checkout the first commit and use <code>git tag initial</code> to tag the first commit as initial.</p>
+<p>Now you can travel back and forth using <code>git checkout master</code> and <code>git checkout initial</code></p>
+<p>Additionally, you can use <code>git tag</code> to view all defined tags.</p>
 <h3>
 <a id="user-content-undoing-things" class="anchor" href="#undoing-things" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things" rel="nofollow">Undoing Things</a>
 </h3>
 <h5>
 <a id="user-content-unmodifying-a-modified-file" class="anchor" href="#unmodifying-a-modified-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things#_unmodifying_a_modified_file" rel="nofollow">Unmodifying a Modified File</a>
 </h5>
-<pre><code>    First, go back to master version `git checkout master`.
+<p>First, go back to master version <code>git checkout master</code>.</p>
+<p>If you run <code>git status</code>, git should report <em>working directory clean</em>.</p>
+<p>Pretend we have made some unwanted changes which haven't not been staged (we have not run <code>git add</code>) yet.<br>
+<code>echo "Unwanted Change" &gt;&gt; d3-demo.html</code><br>
+This command appends one line with string "Unwanted Change" to the end of the file.</p>
+<p>When we run <code>git status</code> again, we will see d3-demo.html has been modified but changes have not been staged.</p>
+<pre><code>$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    If you run `git status`, git should report *working directory clean*.
+  modified:   d3-demo.html
 
-    Pretend we have made some unwanted changes which haven't not been staged (we have not run `git add`) yet.  
-    `echo "Unwanted Change" &gt;&gt; d3-demo.html`  
-    This command appends one line with string "Unwanted Change" to the end of the file.
-
-    When we run `git status` again, we will see d3-demo.html has been modified but changes have not been staged.
-
-    ```
-    $ git status
-    On branch master
-    Changes not staged for commit:
-      (use "git add &lt;file&gt;..." to update what will be committed)
-      (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-
-      modified:   d3-demo.html
-
-    no changes added to commit (use "git add" and/or "git commit -a")
-    ```
-
-    As it suggests, we can use `git checkout d3-demo.html` to discard the changes we have made.  
-    You can confirm that the appended line has disappeared using `tail d3-demo.html`, a command to see the last lines of the file.
+no changes added to commit (use "git add" and/or "git commit -a")
 </code></pre>
+<p>As it suggests, we can use <code>git checkout d3-demo.html</code> to discard the changes we have made.<br>
+You can confirm that the appended line has disappeared using <code>tail d3-demo.html</code>, a command to see the last lines of the file.</p>
 <h5>
 <a id="user-content-unstaging-a-staged-file" class="anchor" href="#unstaging-a-staged-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things#_unstaging" rel="nofollow">Unstaging a Staged File</a>
 </h5>
-<pre><code>    Pretend we have made some unwanted changes and have staged these changes
-    
-    ```bash
-    $ echo "Unwanted Change" &gt;&gt; d3-demo.html
-    $ git add d3-demo.html
-    $ git status
-    On branch master
-    Changes to be committed:
-      (use "git reset HEAD &lt;file&gt;..." to unstage)
+<p>Pretend we have made some unwanted changes and have staged these changes</p>
+<div class="highlight highlight-source-shell"><pre>$ <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>Unwanted Change<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> d3-demo.html
+$ git add d3-demo.html
+$ git status
+On branch master
+Changes to be committed:
+  (use <span class="pl-s"><span class="pl-pds">"</span>git reset HEAD &lt;file&gt;...<span class="pl-pds">"</span></span> to unstage)
 
-      modified:   d3-demo.html
-    ```
-
-    Similarly, we can follow what the `git status` instructs us to do:  
-    `git reset HEAD d3-demo.html`  
-    Since we have checked out master branch, HEAD is equivalent to MASTER and refers to files in most recent commit.
-
-    However, we are not done yet, if you run `git status` again, you will find we end up in previous situation:
-    we have made some changes but have not staged these changes yet (the "Unwanted Change" line is still there).  
-    Run `git checkout d3-demo.html` to reset the file.
-
-    If it's okay to discard all changes (staged or unstaged), you can directly run `git checkout &lt;hash&gt;` to go back to a specific commit.
-</code></pre>
+  modified:   d3-demo.html</pre></div>
+<p>Similarly, we can follow what the <code>git status</code> instructs us to do:<br>
+<code>git reset HEAD d3-demo.html</code><br>
+Since we have checked out master branch, HEAD is equivalent to MASTER and refers to files in most recent commit.</p>
+<p>However, we are not done yet, if you run <code>git status</code> again, you will find we end up in previous situation:
+we have made some changes but have not staged these changes yet (the "Unwanted Change" line is still there).<br>
+Run <code>git checkout d3-demo.html</code> to reset the file.</p>
+<p>If it's okay to discard all changes (staged or unstaged), you can directly run <code>git checkout &lt;hash&gt;</code> to go back to a specific commit.</p>
 <h5>
 <a id="user-content-undoing--committed-changes" class="anchor" href="#undoing--committed-changes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://gitimmersion.com/lab_16.html" rel="nofollow">Undoing  Committed Changes</a>
 </h5>
-<pre><code>    Pretend we have made some unwanted changes and have committed these changes
-    
-    ```bash
-    $ echo "Unwanted Change" &gt;&gt; d3-demo.html
-    $ git add d3-demo.html
-    $ git commit -m "unwanted changes committed"
-    ```
+<p>Pretend we have made some unwanted changes and have committed these changes</p>
+<div class="highlight highlight-source-shell"><pre>$ <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>Unwanted Change<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> d3-demo.html
+$ git add d3-demo.html
+$ git commit -m <span class="pl-s"><span class="pl-pds">"</span>unwanted changes committed<span class="pl-pds">"</span></span></pre></div>
+<p>To revert back, we basically create an overwriting commit.<br>
+<em>You can achieve the same effect by remove unwanted changes, add the file, and commit.</em></p>
+<p><code>git revert HEAD --no-edit</code></p>
+<blockquote>
+<p><a href="https://git-scm.com/docs/git-revert" rel="nofollow">git-revert</a> revert the changes that the related patches introduce, and record some new commits that record them.</p>
+<p>git revert is used to record some new commits to reverse the effect of some earlier commits (often only a faulty one).
+If you want to throw away all uncommitted changes in your working directory, you should see git-reset[1], particularly the --hard option.
+If you want to extract specific files as they were in another commit, you should see git-checkout[1], specifically the git checkout  --  syntax.
+Take care with these alternatives as both will discard uncommitted changes in your working directory.</p>
+</blockquote>
+<h3>
+<a id="user-content-git-branching" class="anchor" href="#git-branching" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell" rel="nofollow">Git Branching</a>
+</h3>
+<h5>
+<a id="user-content-creating-a-branch" class="anchor" href="#creating-a-branch" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating A Branch</h5>
+<p>Typically, a stable version of an application is stored in the master branch.
+When we plan to make some changes, we open a new branch and store changes in the new branch.
+By separating the development application and the deployment application (the stable version),
+we can make changes without worrying about potentially damaging effects.</p>
+<p>We can create a new branch using
+<code>git checkout -b &lt;branchname&gt;</code></p>
+<blockquote>
+<p>The command is a shortcut for <code>git branch &lt;branchname&gt;</code> followed by a <code>git checkout &lt;branchname&gt;</code>.</p>
+</blockquote>
+<h5>
+<a id="user-content-navigating-branches" class="anchor" href="#navigating-branches" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Navigating Branches</h5>
+<p>You can use <code>git branch</code> to view all branches and use <code>git checkout &lt;branchname&gt;</code> to navigate around branches.</p>
+<h5>
+<a id="user-content-merging-branches" class="anchor" href="#merging-branches" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Merging Branches</h5>
+<p>First, let us introduce a divergence -- we add a README in dev branch while make some changes to d3-demo.html in master branch.</p>
+<ul>
+<li>
+<p>changes in dev branch</p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout dev
+Switched to branch <span class="pl-s"><span class="pl-pds">'</span>dev<span class="pl-pds">'</span></span>
+$ <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>This is a sample project for D3 visualization<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> README.md
+$ ls
+README.md    d3-demo.html
+$ git add README.md
+$ git commit -m <span class="pl-s"><span class="pl-pds">"</span>Added README<span class="pl-pds">"</span></span></pre></div>
+</li>
+<li>
+<p>changes in master branch</p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout master
+Switched to branch <span class="pl-s"><span class="pl-pds">'</span>master<span class="pl-pds">'</span></span>
+$ ls
+d3-demo.html</pre></div>
+<p>Then we add the link to latest d3 release in d3-demo.html, put it just after the body tag<br>
+<code>&lt;script src="https://d3js.org/d3.v5.min.js"&gt;&lt;/script&gt;</code></p>
+<div class="highlight highlight-source-shell"><pre>$ git add d3-demo.html
+$ git commit -m <span class="pl-s"><span class="pl-pds">"</span>include link to d3 script<span class="pl-pds">"</span></span></pre></div>
+</li>
+</ul>
+<p>We can view the branches and how they diverge using</p>
+<pre><code>$ git log --all --graph
+* commit d3453f85b737c41d2d9cfd8399910d29fb5aa5b8 (HEAD -&gt; master)
+| Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
+| Date:   Fri May 3 06:02:45 2019 -0400
+|
+|     include link to d3 script
+|
+| * commit 57a38abd6494fbeabc6e7461c15cbc02d182374a (dev)
+|/  Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
+|   Date:   Fri May 3 05:53:48 2019 -0400
+|
+|       Added README
+|
+* commit 808a90528cfe295eb7e44080712fccb778ee99f8
+| Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
+| Date:   Wed May 1 10:35:53 2019 -0400
+|
+|     HTML Template
+|
+* commit ee15e447dff6c40fa4cc5ccdf7075af27963b999 (tag: initial)
+  Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
+  Date:   Wed May 1 10:31:23 2019 -0400
 
-    To revert back, we basically create an overwriting commit.  
-    *You can achieve the same effect by remove unwanted changes, add the file, and commit.*  
-
-    `git revert HEAD --no-edit` 
-    &gt; [git-revert](https://git-scm.com/docs/git-revert) revert the changes that the related patches introduce, and record some new commits that record them.
-    &gt;
-    &gt; git revert is used to record some new commits to reverse the effect of some earlier commits (often only a faulty one).
-    &gt; If you want to throw away all uncommitted changes in your working directory, you should see git-reset[1], particularly the --hard option.
-    &gt; If you want to extract specific files as they were in another commit, you should see git-checkout[1], specifically the git checkout &lt;commit&gt; -- &lt;filename&gt; syntax.
-    &gt; Take care with these alternatives as both will discard uncommitted changes in your working directory.
+      create target file
+(END)
 </code></pre>
+<blockquote>
+<p>The --all flag makes sure that we see all the branches. The default is to show only the current branch.<br>
+Adding the --graph option to git log causes it to draw the commit tree using simple ASCII characters.</p>
+</blockquote>
+<p>Often we want to merge the changes in master branch to our development branch so that the developemnt branch
+is up to date with recent changes in master while keep its local changes unaffected.
+Now both branches contain independent changes. We can merge the changes from the master branch by:</p>
+<pre><code>$ git checkout dev
+$ git merge master
+$ git log --all --graph
+*   commit 25e554a9a199bd8a3bbc9167916b182d599e96be (HEAD -&gt; dev)
+|\  Merge: 57a38ab d3453f8
+| | Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
+| | Date:   Fri May 3 06:14:53 2019 -0400
+| |
+| |     Merge branch 'master' into dev
+| |
+| * commit d3453f85b737c41d2d9cfd8399910d29fb5aa5b8 (master)
+| | Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
+| | Date:   Fri May 3 06:02:45 2019 -0400
+| |
+| |     include link to d3 script
+| |
+* | commit 57a38abd6494fbeabc6e7461c15cbc02d182374a
+|/  Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
+|   Date:   Fri May 3 05:53:48 2019 -0400
+|
+|       Added README
+|
+* commit 808a90528cfe295eb7e44080712fccb778ee99f8
+| Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
+| Date:   Wed May 1 10:35:53 2019 -0400
+|
+|     HTML Template
+|
+* commit ee15e447dff6c40fa4cc5ccdf7075af27963b999 (tag: initial)
+  Author: pengzhengyi &lt;zhengyi_peng@brown.edu&gt;
+  Date:   Wed May 1 10:31:23 2019 -0400
+
+      create target file
+</code></pre>
+<p>If we open the d3-demo.html, we can see changes from master branch is now included.
+However, the new README.md in dev is not present if we switch to master branch.</p>
+<p>Another way to achieve the same effect is using <a href="https://git-scm.com/docs/git-rebase" rel="nofollow">rebase</a> command.
+Instead of running <code>git merge master</code>, we will run <code>git rebase master</code> in dev branch.</p>
+<blockquote>
+<p>Merge VS Rebase</p>
+<p>The final result of the rebase is very similar to the merge. The greet branch now contains all of its changes, as well as all the changes from the master branch. However, the commit tree is quite different. The commit tree for the greet branch has been rewritten so that the master branch is a part of the commit history. This leaves the chain of commits linear and much easier to read.</p>
+<p>When to Rebase, When to Merge?</p>
+<p>Don’t use rebase …</p>
+<p>If the branch is public and shared with others. Rewriting publicly shared branches will tend to screw up other members of the team.
+When the exact history of the commit branch is important (since rebase rewrites the commit history).
+Given the above guidelines, I tend to use rebase for short-lived, local branches and merge for branches in the public repository.</p>
+</blockquote>
+<h3>
+<a id="user-content-resolving-conflicts" class="anchor" href="#resolving-conflicts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resolving Conflicts</h3>
+<p>Sadly, things do not always go smoothly. Conflicts arise when you are merging two branches with conflicting changes.</p>
+<ul>
+<li>changes to dev branch
+<ul>
+<li>Checkout the dev branch. <code>git checkout dev</code>
+</li>
+<li>We add a svg element to d3-demo.html immediately after the body tag.</li>
+<li>Commit this change. <code>git add d3-demo.html</code> and <code>git commit -m "add svg element"</code>
+</li>
+</ul>
+</li>
+<li>changes to master branch
+<ul>
+<li>Checkout the master branch. <code>git checkout master</code>
+</li>
+<li>We add a div element to d3-demo.html immediately after the body tag.</li>
+<li>Commit this change. <code>git add d3-demo.html</code> and <code>git commit -m "add div element"</code>
+</li>
+</ul>
+</li>
+</ul>
+<p>If we try to merge two branches, we will get a merge conflict.</p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout master
+$ git merge dev
+Auto-merging d3-demo.html
+CONFLICT (content): Merge conflict <span class="pl-k">in</span> d3-demo.html
+Automatic merge failed<span class="pl-k">;</span> fix conflicts and <span class="pl-k">then</span> commit the result.</pre></div>
+<p>If you open the d3-demo.html, it will look like:</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+  &lt;title&gt;CSCI1320: D3 Lecture Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+  &lt;div&gt;
+  &lt;/div&gt;
+=======
+  &lt;svg&gt;
+  &lt;/svg&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev
+  &lt;script src="https://d3js.org/d3.v5.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>The first section is the version on the head of the current branch (master).
+The second section is the version on the dev branch.</p>
+</blockquote>
+<p>We need to manually resolve the conflict.
+Some possible ways to resolve this conflict includes deleting one section and merging two sections.</p>
+<p>For merging, we can modify the conflict part to be:</p>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">body</span>&gt;
+  &lt;<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">svg</span>&gt;
+    &lt;/<span class="pl-ent">svg</span>&gt;
+  &lt;/<span class="pl-ent">div</span>&gt;
+  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://d3js.org/d3.v5.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+  &lt;<span class="pl-ent">script</span>&gt;<span class="pl-s1"></span>
+<span class="pl-s1">  </span>&lt;/<span class="pl-ent">script</span>&gt;
+&lt;/<span class="pl-ent">body</span>&gt;</pre></div>
+<p>Then we can commit the conflict resolution by <code>git add d3-demo.html</code> and <code>git commit -m "nest svg element inside div element"</code>.</p>
+<p>As it is a hassle to fix merge conflicts, it is preferable to avoid conflicts at the beginning.
+This post gives out some <a href="https://itnext.io/recommendations-to-avoid-merge-conflicts-845ec133676e" rel="nofollow">Recommendations to avoid merge conflicts</a></p>
 <h1>
 <a id="user-content-thanks-for-reading" class="anchor" href="#thanks-for-reading" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Thanks For Reading</h1>
 
