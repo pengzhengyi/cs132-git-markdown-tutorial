@@ -28,14 +28,8 @@ Author: Zhengyi Peng <zhengyi_peng@brown.edu>
         + `$ grip <markdown-file>`
 + [MacDown: open source Markdown editor for OS X](https://github.com/MacDownApp/macdown)
     ![app screenshot](https://github.com/MacDownApp/macdown/blob/master/assets/screenshot.png)
-    + Install:
-        + [App Zip](http://macdown.uranusjr.com/download/latest/)
-        + `$ brew cask install macdown`
 + [vim-markdown](https://github.com/plasticboy/vim-markdown)
     > Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
-    + Install:
-        + `$ git clone https://github.com/plasticboy/vim-markdown.git ~/.vim/bundle/vim-markdown` (Pathogen)
-        + [Other Installation Methods](https://github.com/plasticboy/vim-markdown#installation)
 
 # [Git](https://git-scm.com)
 > Git (/ɡɪt/) is a distributed version-control system for tracking changes in source code during software development.
